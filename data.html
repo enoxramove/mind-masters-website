@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Data and figures from Mind Masters Developers.">
+	<title>Data | Mind Masters Developers</title>
+	<!-- Here we adde a log of mind masters developers -->
+	<link rel="icon" href="images/Screenshot_20261003_130755_Chrome.jpg">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+	<!--This is our header that has the heading text and also our log for mind masters developers and the simple menu where one can interact with the other parts of the website -->
+	<header class="site-header">
+		<a class="brand" href="index.html" aria-label="Mind Masters Developers home">
+			<span class="brand-mark"><img src="images/Screenshot_20261003_130755_Chrome.jpg" alt=""></span>
+			<span class="brand-copy"><span class="brand-name">Mind Masters Developers</span><span class="brand-caption">Brain Behind Brilliant Solutions</span></span>
+		</a>
+		<div class="header-actions"> <!--here is the button that helps one to change from light mode to dark mode -->
+			<button class="icon-button" type="button" id="themeButton" aria-label="Switch to dark theme" title="Change theme">☾</button>
+			<button class="icon-button menu-button" type="button" id="menuButton" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav" title="Open menu"><span></span><span></span><span></span></button>
+		</div>
+		<nav class="site-nav" id="siteNav" aria-label="Main navigation"> <!-- The navigation part that has all our links to the rest of the web pages -->
+			<a href="index.html">Home</a><a href="about.html">About</a><a href="contact.html">Contact</a><a href="gallery.html">Gallery</a>
+		</nav>
+	</header>
+	<main class="page-shell">
+		<p class="eyebrow">Our data</p>
+		<h1 class="page-title">Some of the projects we have worked on</h1>
+		<p class="lead">Since 2025 we have tried working on several projects and as we have described the below.</p>
+		<h2 class="section-heading">Example summary</h2>
+		<section class="content-grid" aria-label="Summary figures">
+			<article class="content-block"><h2>Projects</h2><p>So far we have managed to build over 07 projects this year and all are in implementation by our customers. Most of them are Web application this is because they are more of accessibility and usability.</p></article>
+			<article class="content-block"><h2>People reached</h2><p>Over 05 campanies have reached out to us to develop for them application and over 15 people have also approached us such that they can access our services. So feel free to approach us, we shall give your best.</p></article>
+			<article class="content-block"><h2>Since</h2><p>We have been developing projects since 2025. So we have a good experiance to give your best.</p></article>
+		</section>
+		<h2 class="section-heading">Skills Proficiency table</h2>
+		<div class="data-table-wrap">
+			<table>
+				<thead><tr><th scope="col">Skill</th><th scope="col">Beginner</th><th scope="col">Intermediate</th><th scope="col">Advanced</th></tr></thead>
+				<tbody>
+					<tr><td>HTML</td><td></td><td></td><td>Yes</td></tr>
+					<tr><td>CSS</td><td></td><td>Yes</td><td></td></tr>
+					<tr><td>JavaScript</td><td>Yes</td><td></td><td></td></tr>
+					<tr><td>MySql</td><td></td><td></td><td>Yes</td></tr>
+					<tr><td>Git</td><td></td><td>Yes</td><td></td></tr>
+				</tbody>
+			</table>
+		</div>
+	<nav class="page-pagination" aria-label="Page navigation"><a class="page-step" href="contact.html"><span aria-hidden="true">←</span> Contact</a><a class="page-step" href="gallery.html">Gallery <span aria-hidden="true">→</span></a></nav>
+	</main>
+	<footer class="site-footer">© 2026 Mind Masters Developers.</footer>
+	<!-- Below we have embaded our logic for different buttons like the menu button, site navigation, theme button, the action listner logic for our buttons. -->
+	<script>
+		const menuButton = document.getElementById("menuButton");
+		const siteNav = document.getElementById("siteNav");
+		const themeButton = document.getElementById("themeButton");
+		menuButton.addEventListener("click", () => {
+			const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+			menuButton.setAttribute("aria-expanded", String(!isOpen));
+			menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+			siteNav.classList.toggle("is-open", !isOpen);
+		});
+		themeButton.addEventListener("click", () => {
+			const isDark = document.body.classList.toggle("dark-mode");
+			themeButton.textContent = isDark ? "☀" : "☾";
+			themeButton.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+		});
+	</script>
+</body>
+</html>
