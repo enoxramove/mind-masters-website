@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Home | Mind Masters Developers</title>
+    <link rel="icon" href="images/Screenshot_20261003_130755_Chrome.jpg">
+    <link rel="stylesheet" href="site.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Mind Masters Developers home">
+            <span class="brand-mark"><img src="images/Screenshot_20261003_130755_Chrome.jpg" alt=""></span>
+            <span class="brand-copy">
+                <span class="brand-name">Mind Masters Developers</span>
+                <span class="brand-caption">Brain Behind Brilliant Solutions</span>
+            </span>
+        </a>
+        <div class="header-actions">
+            <button class="icon-button" type="button" id="themeButton" aria-label="Switch to dark theme" title="Change theme">☾</button>
+            <button class="icon-button menu-button" type="button" id="menuButton" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav" title="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="data.html">Data</a>
+            <a href="gallery.html">Gallery</a>
+        </nav>
+    </header>
+
+    <main class="page-shell">
+        <section class="hero">
+            <p class="eyebrow">Welcome</p>
+            <h1 class="page-title">Good ideas deserve thoughtful design.</h1>
+            <p class="lead">We are Mind Masters Developers. A group of developers that transform people's ideas into reality. We develop different kinds of software products and you are most welcome here where you can explore our products.</p>
+            <a class="button-link" href="about.html">Meet the team</a>
+        </section>
+
+        <h2 class="section-heading">What we do</h2>
+        <section class="content-grid" aria-label="Our services">
+            <article class="content-block">
+                <h2>Web design</h2>
+                <p>We develope websites and web applications like e-commerce applications and other different kinds of web development</p>
+            </article>
+            <article class="content-block">
+                <h2>Development</h2>
+                <p>With development is just simply transforming an idea into a product that is our best work we do.</p>
+            </article>
+            <article class="content-block">
+                <h2>Creative ideas</h2>
+                <p>We appreciate your ideas and we also build them into a more nicer idea that specifically fits your expectations and later we implement them in software.</p>
+            </article>
+        </section>
+        <nav class="page-pagination" aria-label="Page navigation">
+            <a class="page-step" href="about.html">About <span aria-hidden="true">→</span></a>
+        </nav>
+    </main>
+
+    <footer class="site-footer">© 2026 Mind Masters Developers.</footer>
+
+    <script>
+        const menuButton = document.getElementById("menuButton");
+        const siteNav = document.getElementById("siteNav");
+        const themeButton = document.getElementById("themeButton");
+
+        menuButton.addEventListener("click", () => {
+            const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+            menuButton.setAttribute("aria-expanded", String(!isOpen));
+            menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+            siteNav.classList.toggle("is-open", !isOpen);
+        });
+
+        themeButton.addEventListener("click", () => {
+            const isDark = document.body.classList.toggle("dark-mode");
+            themeButton.textContent = isDark ? "☀" : "☾";
+            themeButton.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+        });
+    </script>
+</body>
+</html>
