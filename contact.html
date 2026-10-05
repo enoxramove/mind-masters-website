@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Contact Mind Masters Developers.">
+	<title>Contact | Mind Masters Developers</title>
+	<link rel="icon" href="images/Screenshot_20261003_130755_Chrome.jpg">
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="index.html" aria-label="Mind Masters Developers home">
+			<span class="brand-mark"><img src="images/Screenshot_20261003_130755_Chrome.jpg" alt=""></span>
+			<span class="brand-copy"><span class="brand-name">Mind Masters Developers</span><span class="brand-caption">Brain Behind Brilliant Solutions</span></span>
+		</a>
+		<div class="header-actions">
+			<button class="icon-button" type="button" id="themeButton" aria-label="Switch to dark theme" title="Change theme">☾</button>
+			<button class="icon-button menu-button" type="button" id="menuButton" aria-label="Open navigation" aria-expanded="false" aria-controls="siteNav" title="Open menu"><span></span><span></span><span></span></button>
+		</div>
+		<nav class="site-nav" id="siteNav" aria-label="Main navigation">
+			<a href="index.html">Home</a><a href="about.html">About</a><a href="data.html">Data</a><a href="gallery.html">Gallery</a>
+		</nav>
+	</header>
+	<main class="page-shell">
+		<p class="eyebrow">Get in touch with us.</p>
+		<h1 class="page-title">Let's start a conversation with you.</h1>
+		<p class="lead">Here are our contacts for more details reach out to us. Let us know what you think and how we can cooperate to help you out on certain issues. Thank you for visting our website.</p>
+		<section class="content-grid" aria-label="Contact details">
+			<article class="content-block"><h2>Email</h2><p><a href="mailto:innocesntssemyalo6@gmail.com">innocesntssemyalo6@gmail.com</a></p></article>
+			<article class="content-block"><h2>Phone</h2><p><a href="tel:+256784769941">+256 783 769 941</a></p></article>
+			<article class="content-block"><h2>Location</h2><p>Mbarara University of Science and Technology. Kihumuro Campus.</p></article>
+		</section>
+		<h2 class="section-heading">When we're available:</h2>
+        <section class="content-block"><p>We are open to communication starting from 7:30 AM to 6:30 PM. Take note.</p></section>
+
+        <section class="content-grid" aria-label="Contact form">
+			<article class="content-block" style="grid-column: 1 / -1;">
+				<h2>Send us a message</h2>
+				<form action="#" method="post">
+					<p>
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" placeholder="Your full name" required>
+                    </p>
+
+                    <p>
+						<label for="email">Email</label>
+                       <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                    </p>
+					<p>
+						<label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+256 700 000000">
+                    </p>
+
+                    <p>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+                    </p>
+					<p><button type="submit">Send Message</button></p>
+                </form>
+            </article>
+        </section>
+
+		<nav class="page-pagination" aria-label="Page navigation"><a class="page-step" href="about.html"><span aria-hidden="true">←</span> About</a><a class="page-step" href="data.html">Data <span aria-hidden="true">→</span></a></nav>
+	</main>
+	<footer class="site-footer">© 2026 Mind Masters Developers.</footer>
+	<script>
+		const menuButton = document.getElementById("menuButton");
+		const siteNav = document.getElementById("siteNav");
+		const themeButton = document.getElementById("themeButton");
+		menuButton.addEventListener("click", () => {
+			const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+			menuButton.setAttribute("aria-expanded", String(!isOpen));
+			menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+			siteNav.classList.toggle("is-open", !isOpen);
+		});
+		themeButton.addEventListener("click", () => {
+			const isDark = document.body.classList.toggle("dark-mode");
+			themeButton.textContent = isDark ? "☀" : "☾";
+			themeButton.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+		});
+	</script>
+</body>
+</html>
